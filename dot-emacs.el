@@ -14,6 +14,7 @@
 
 ;; 설정에 필요한 파일을 로드한다.
 (load "~/.emacs.d/dot-emacs/base/package.el")
+(load "~/.emacs.d/dot-emacs/fixed-font/package.el")
 (load "~/.emacs.d/dot-emacs/checker/package.el")
 (load "~/.emacs.d/dot-emacs/completion/auto-completion/package.el")
 (load "~/.emacs.d/dot-emacs/lang/emacs-lisp/package.el")
