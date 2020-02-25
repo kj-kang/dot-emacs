@@ -7,6 +7,15 @@
 ;; 시작 메시지는 보여주지 않는다.
 (setq inhibit-startup-message nil)
 
+;; 한글 환경을 지정한다.
+(set-language-environment "Korean")
+(prefer-coding-system 'utf-8)
+(setenv "LANG" "ko_KR.UTF-8")
+(setq system-time-locale "ko_KR.UTF-8")
+
+;; Custom 설정은 별도의 파일에 저장한다.
+(setq custom-file "~/.emacs.d/custom.el")
+
 ;; 파일 편집시 자동으로 저장한다.
 (setq auto-save-default t)
 
@@ -33,7 +42,7 @@
     (scroll-bar-mode -1)
     (tool-bar-mode -1)))
 
-;;
+;; brew 에서 제공하는 PATH 를 지정한다.
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 (setq exec-path (cons "/usr/local/bin" exec-path))
 
@@ -42,7 +51,7 @@
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa"        . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("marmalade"    . "https://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives '("org-mode"     . "https://orgmode.org/packages/") t)
+(add-to-list 'package-archives '("org"          . "https://orgmode.org/packages/") t)
 
 (package-initialize)
 

@@ -24,17 +24,3 @@
 (load "~/.emacs.d/dot-emacs/orgmode/package.el")
 
 ;;; dot-emacs.el ends here
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (treemacs-icons-dired sbt-mode use-package tide spacemacs-theme smartparens scala-mode rjsx-mode posframe move-dup magit-gitflow lsp-ui helm-projectile flycheck-pos-tip doom-themes doom-modeline dap-mode company-lsp coffee-mode))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
