@@ -22,12 +22,20 @@
 ;; 질문에 대한 답변을 짧게 한다.
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; 탭은 스페이스 3칸을 사용한다.
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+
 ;; 윈도우 환경을 사용하는 경우 메뉴바, 스크롤바와 툴바를 제거한다.
 (when (window-system)
   (progn
     (menu-bar-mode -1)
     (scroll-bar-mode -1)
     (tool-bar-mode -1)))
+
+;;
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+(setq exec-path (cons "/usr/local/bin" exec-path))
 
 (require 'package)
 

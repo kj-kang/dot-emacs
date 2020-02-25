@@ -17,6 +17,7 @@
 (load "~/.emacs.d/dot-emacs/fixed-font/package.el")
 (load "~/.emacs.d/dot-emacs/checker/package.el")
 (load "~/.emacs.d/dot-emacs/completion/auto-completion/package.el")
+(load "~/.emacs.d/dot-emacs/completion/helm/package.el")
 (load "~/.emacs.d/dot-emacs/lang/emacs-lisp/package.el")
 (load "~/.emacs.d/dot-emacs/orgmode/package.el")
 

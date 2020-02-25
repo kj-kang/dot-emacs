@@ -21,7 +21,7 @@
   (setq helm-scroll-amount 8)
   (setq helm-echo-input-in-header-line t)
   (setq helm-autoresize-mode t)
-  (setq helm-autoresize-max-height 10)
+  (setq helm-autoresize-max-height 16)
   :config
   (require 'helm-config))
 
