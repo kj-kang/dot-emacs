@@ -110,5 +110,14 @@
   :init
   (doom-modeline-mode 1))
 
+(use-package treemacs
+  :ensure t
+  :bind
+  ("C-x t t" . treemacs)
+  ("M-)"     . treemacs-select-window)
+  :config
+  (treemacs-follow-mode t)
+  (treemacs-filewatch-mode t)
+  (treemacs-fringe-indicator-mode t))
 
 ;;; package.el ends here
