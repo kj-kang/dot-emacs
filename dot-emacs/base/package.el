@@ -69,19 +69,26 @@
 
 (use-package smartparens
   :ensure t
-  :init
-  (progn
-    (setq sp-show-pair-delay 0.2
-	  sp-show-pair-from-inside t))
+  :bind
+  (:map smartparens-mode-map
+        ("C-M-f"         . sp-forward-sexp)
+        ("C-M-b"         . sp-backward-sexp)
+        ("M-<delete>"    . sp-unwrap-sexp)
+        ("M-<backspace>" . sp-backward-unwrap-sexp)
+        ("C-<right>"     . sp-forward-slurp-sexp)
+        ("C-<left>"      . sp-forward-barf-sexp)
+        ("C-M-<right>"   . sp-backward-slurp-sexp)
+        ("C-M-<left>"    . sp-backward-barf-sexp))
   :config
   (require 'smartparens-config)
-  (show-smartparens-global-mode +1))
+  (setq sp-show-pair-delay 0.2
+        sp-show-pair-from-inside t))
 
 (use-package projectile
   :ensure t
   :bind
   ("C-c p" . projectile-command-map)
-  :config
+  :confign
   (projectile-mode))
 
 (use-package magit
@@ -116,7 +123,6 @@
   :config
   (setq doom-modeline-height 25)
   (setq doom-modeline-minor-modes t)
-  :init
   (doom-modeline-mode 1))
 
 (use-package treemacs
