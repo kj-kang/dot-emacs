@@ -17,4 +17,3 @@
   (fixed-font-set-height-default))
 
 ;;; package.el ends here
-				   

@@ -11,7 +11,11 @@
   :ensure t
   :mode "\\.\\(scala\\sbt\\)$"
   :bind
-  ("M-*" . pop-tag-mark))
+  ("M-*" . pop-tag-mark)
+  :config
+  (add-hook 'scala-mode-hook
+            (lambda ()
+              (add-to-list 'write-file-functions 'delete-trailing-whitespace))))
 
 (use-package sbt-mode
   :ensure t
