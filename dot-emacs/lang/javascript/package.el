@@ -23,7 +23,8 @@
   (add-to-list 'magic-mode-alist '(javascript-jsx-file-p . rjsx-mode))
   (add-hook 'rjsx-mode-hook
             (lambda ()
-              (add-to-list 'write-file-functions 'delete-trailing-whitespace))))
+              (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
+  (add-hook 'rjax-mode-hook #'smartparens-mode))
 
 (use-package tide
   :ensure t

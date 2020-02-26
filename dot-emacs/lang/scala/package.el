@@ -15,7 +15,8 @@
   :config
   (add-hook 'scala-mode-hook
             (lambda ()
-              (add-to-list 'write-file-functions 'delete-trailing-whitespace))))
+              (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
+  (add-hook 'emacs-lisp-mode-hook #'smartparens-mode))
 
 (use-package sbt-mode
   :ensure t
