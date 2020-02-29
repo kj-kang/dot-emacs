@@ -88,7 +88,7 @@
   :ensure t
   :bind
   ("C-c p" . projectile-command-map)
-  :confign
+  :config
   (projectile-mode))
 
 (use-package magit
@@ -134,5 +134,10 @@
   (treemacs-follow-mode t)
   (treemacs-filewatch-mode t)
   (treemacs-fringe-indicator-mode t))
+
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode 1))
 
 ;;; package.el ends here
