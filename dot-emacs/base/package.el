@@ -120,9 +120,11 @@
 
 (use-package doom-modeline
   :ensure t
-  :config
+  :init
   (setq doom-modeline-height 25)
+  (setq doom-modeline-bar-width 3)
   (setq doom-modeline-minor-modes t)
+  (setq doom-modeline-project-detection 'project)
   (doom-modeline-mode 1))
 
 (use-package treemacs
