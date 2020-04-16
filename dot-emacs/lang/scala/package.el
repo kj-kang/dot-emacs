@@ -27,15 +27,23 @@
   :config
   (defun dot-emacs:run-scala (&optional step)
     (interactive)
-    (setq buffer "*sbt*<~/Projects/tutorials/scala-tutorials/>")
-    (setq min (point-at-bol))
-    (setq max (point-at-eol))
-    (setq cmd (buffer-substring min max))
-    (message cmd)
-    (with-current-buffer buffer
-      (insert cmd)
-      (comint-send-input)))
-  )
+    (let ((sbt-console (concat
+                             "*sbt*<"
+                             "~"
+                             (substring
+                              (projectile-project-root)
+                              (length (getenv "HOME")))
+                             ">")))
+      (if (use-region-p)
+          (setq min (region-beginning)
+                max (region-end))
+        (setq min (point-at-bol)
+              max (point-at-eol)))
+      (setq cmd (buffer-substring min max))
+      (message cmd)
+      (with-current-buffer sbt-console
+        (insert cmd)
+        (comint-send-input))))
 
 (use-package lsp-mode
   :ensure t
