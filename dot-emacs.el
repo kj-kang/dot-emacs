@@ -72,10 +72,15 @@
   ("C-0" . fixed-font-default)
   ("C-+" . fixed-font-increase)
   ("C--" . fixed-font-decrease)
-  :custom
-  (fixed-font-hangul-font "NanumGothicCoding")
-  (fixed-font-ascii-font  "Fira Mono")
-  (fixed-font-default-height 160)
+  :config
+  (when (string= "10b-server" (system-name))
+    (setq fixed-font-hangul-font "NanumGothicCoding딩")
+    (setq fixed-font-ascii-font  "Fira Mono")
+    (setq fixed-font-default-height 160))
+  (when (string= "10B-NOTE" (system-name))
+    (setq fixed-font-hangul-font "나눔고딕코딩")
+    (setq fixed-font-ascii-font  "Fira Mono")
+    (setq fixed-font-default-height 100))
   :init
   (fixed-font-default))
 
@@ -243,7 +248,7 @@
   ("C-c l" . org-store-links)
   :custom
   (org-agenda-files
-   '("~/Writings/org/todo.org")))
+   '("~/Writings/org/todo.org"))
   :config
   (require 'ox-md))
 
