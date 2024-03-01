@@ -1,0 +1,13 @@
+l/.emacs.desktop
+/.emacs.desktop.lock
+/auto-save-list/
+/custom.el
+/eln-cache/
+/elpa/
+/eshell/
+/projectile-bookmarks.eld
+/projectile.cache
+/recentf
+/transient/
+/.emacs.desktop
+*.elc
