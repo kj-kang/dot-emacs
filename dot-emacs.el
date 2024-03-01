@@ -276,6 +276,21 @@
   (emacs-lisp-mode . show-paren-mode))
 
 
+;;;
+;;; for AutoHotKey
+;;; https://github.com/punassuming/ahk-mode
+;;;
+
+(use-package ahk-mode
+  :ensure t
+  :if (eq system-type 'windows-nt)
+  :mode "\\.ahk\\'"
+  :hook
+  (ahk-mode . company-mode)
+  (ahk-mode . display-line-numbers-mode)
+  (ahk-mode . whitespace-cleanup-mode))
+
+
 ;; Local Variabels:
 ;;
 ;; End:
