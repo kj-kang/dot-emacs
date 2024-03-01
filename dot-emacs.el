@@ -74,7 +74,7 @@
   ("C--" . fixed-font-decrease)
   :config
   (when (string= "10b-server" (system-name))
-    (setq fixed-font-hangul-font "NanumGothicCoding딩")
+    (setq fixed-font-hangul-font "NanumGothicCoding")
     (setq fixed-font-ascii-font  "Fira Mono")
     (setq fixed-font-default-height 160))
   (when (string= "10B-NOTE" (system-name))
