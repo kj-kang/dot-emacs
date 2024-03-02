@@ -91,6 +91,7 @@
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (package-initialize)
 
 ;;;
@@ -290,6 +291,59 @@
   (ahk-mode . display-line-numbers-mode)
   (ahk-mode . whitespace-cleanup-mode))
 
+;;
+;; for Typescript, Javascript
+;;
+
+(use-package tide
+  :ensure t
+  :pin melpa
+  :bind
+  (:map tide-mode-map
+        ("C-c d" . tide-documentation-at-point)
+        ("C-c f" . tide-fix))
+  :custom
+  (tide-format-options '(:indentSize 2 :tabSize 2)))
+
+(use-package typescript-mode
+  :ensure t
+  :mode ("\\.js\\'" "\\.jsx\\'" "\\.ts\\'" "\\.tsx\\'")
+  :hook
+  (typescript-mode . company-mode)
+  (typescript-mode . display-line-numbers-mode)
+  (typescript-mode . flycheck-mode)
+  (typescript-mode . show-paren-mode)
+  (typescript-mode . whitespace-cleanup-mode)
+  :custom
+  (typescript-indent-level 2))
+
+;;
+;; for Web (html, jsx, tsx, ...)
+;;
+
+(use-package web-mode
+  :ensure t
+  :pin melpa
+  :mode ("\\.jsx\\'" "\\.ts\\'" "\\.tsx\\'" "\\.html\\'")
+  :hook
+  (web-mode . (lambda ()
+                (when (member (file-name-extension buffer-file-name) '("jsx" "ts" "tsx"))
+                  (tide-setup))))
+  (web-mode . company-mode)
+  (web-mode . display-line-numbers-mode)
+  (web-mode . flycheck-mode)
+  (web-mode . show-paren-mode)
+  (web-mode . whitespace-cleanup-mode)
+  :custom
+  (web-mode-markup-indent-offset 2)
+  (web-mode-css-indent-offset 2)
+  (web-mode-code-indent-offset 2)
+  (web-mode-block-padding 2)
+  (web-mode-comment-style 2)
+  (web-mode-enable-css-colorization t)
+  (web-mode-enable-auto-closing t)
+  (web-mode-enable-current-element-highlight t)
+  (web-mode-enable-auto-closing t))
 
 ;; Local Variabels:
 ;;
