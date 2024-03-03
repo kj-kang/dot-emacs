@@ -292,6 +292,21 @@
   (ahk-mode . whitespace-cleanup-mode))
 
 ;;
+;; for JSON
+;;
+
+(use-package json-mode
+  :ensure t
+  :custom
+  (js-indent-level 2)
+  :hook
+  (json-mode . display-line-numbers-mode)
+  (json-mode . flycheck-mode)
+  (json-mode . show-paren-mode)
+  (json-mode . whitespace-cleanup-mode))
+
+
+;;
 ;; for Typescript, Javascript
 ;;
 
